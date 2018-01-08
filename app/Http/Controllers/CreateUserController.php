@@ -8,6 +8,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\User as User;
 
 /**
@@ -19,8 +20,15 @@ class CreateUserController
 {
     public function create(Request $request)
     {
-        $user = new User($request->input('first_name'),$request->input('second_name'),$request->input('phone'));
-            return view('show',['user'=>$user]);
+        DB::table('user')->insert(
+            ['first_name' => $request->input('first_name'), 
+            'second_name' => $request->input('second_name'),
+            'phone' => $request->input('phone')]
+        );
+        $user = new User($request->input('first_name'),
+                        $request->input('second_name'),
+                        $request->input('phone'));
+        return view('show',['user'=>$user]);
       
     }
 }
