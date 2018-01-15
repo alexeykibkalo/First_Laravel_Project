@@ -11,9 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+//Route::get('/', function () {
+  //  return view('showBlogs');
+//});
+Route::get('/','ViewBlogsController@ShowBlobsList');
 Route::get('/home','HomeController@home');
-Route::get('/create', 'CreateUserController@create');
+// Route::get('/create', 'CreateUserController@create');
+Route::get('/showBlog','SingleBlogViewController@View');
+Route::get('/createBlog', function () {
+    return view('createNewBlog');
+});
+Route::post('/newBlog','CreateNewBlogController@Create');
