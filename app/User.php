@@ -15,22 +15,27 @@ namespace App;
  */
 class User extends \Illuminate\Database\Eloquent\Model 
 {
-   public $firstName;
+//    public $firstName;
 
-   public $secondName;
+//    public $secondName;
 
-   public $phone;
+//    public $phone;
 
-   public function __construct($first, $second, $phone)
+//    public function __construct($first, $second, $phone)
 
+//    {
+
+// 	   $this->firstName=$first;
+
+// 	   $this->secondName=$second;
+
+// 	   $this->phone=$phone;
+
+//    }
+protected $table = 'users';
+   public function blogs()
    {
-
-	   $this->firstName=$first;
-
-	   $this->secondName=$second;
-
-	   $this->phone=$phone;
-
+       return $this->hasMany(Blog::class);
    }
 
 }

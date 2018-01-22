@@ -5,9 +5,13 @@
   <title>Blog</title>
  </head>
  <body>
-   <p><strong>{{$blog->title}}</strong></p>
-   <p>{{$blog->content}}</p>
-   <p><strong>Author: {{$blog->username}}</strong></p>
-    
+ <?php
+    foreach($blogs as $blog)
+    {
+        echo'<p><strong>'.$blog->title.'</strong></p>';
+        echo'<p>'.$blog->content.'</p>';
+        
+    }
+    ?>
  </body>
 </html>

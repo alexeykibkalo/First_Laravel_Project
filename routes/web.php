@@ -14,11 +14,9 @@
 //Route::get('/', function () {
   //  return view('showBlogs');
 //});
-Route::get('/','ViewBlogsController@ShowBlobsList');
+Route::get('/','ViewBlogsController@ShowBlobsList')->name('root');
 Route::get('/home','HomeController@home');
 // Route::get('/create', 'CreateUserController@create');
 Route::get('/showBlog','SingleBlogViewController@View');
-Route::get('/createBlog', function () {
-    return view('createNewBlog');
-});
+Route::get('/createBlog', 'CreateNewBlogController@ShowView');
 Route::post('/newBlog','CreateNewBlogController@Create');

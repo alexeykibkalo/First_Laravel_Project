@@ -10,9 +10,9 @@
    <p><strong>Select blog</strong></p>
    <p><select name="id" multiple>
     <?php
-        foreach($blogs as $blog)
+        foreach($users as $user)
         {
-            echo('<option value="'.$blog->id.'">'.$blog->title.'</option>');
+            echo('<option value="'.$user->id.'">'.$user->second_name.'</option>');
         }
        
          ?>
